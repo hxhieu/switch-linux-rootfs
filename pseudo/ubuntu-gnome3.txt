@@ -1,0 +1,19 @@
+1. Base of your choice
+http://cdimage.ubuntu.com/ubuntu-base/releases/
+2. Untar and chroot
+3. apt update
+4. Install GNOME
+apt install ubuntu-gnome-desktop
+5. Install core deps
+apt-get install language-pack-en-base sudo ssh net-tools ethtool wireless-tools git curl
+6. Add user & assign group
+adduser switch && addgroup switch adm && addgroup switch sudo
+7. Update /etc/sudoers
+8. Update /ect/hostname
+echo 'switch-ubuntu' > /ect/hostname
+9. Update hosts file /etc/hosts
+127.0.0.1    localhost
+127.0.1.1    netbook
+10. Auto login /etc/gdm3/custom.conf
+
+
