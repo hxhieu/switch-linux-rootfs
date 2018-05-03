@@ -1,0 +1,19 @@
+apt install language-pack-en-base sudo ssh net-tools ethtool wireless-tools git curl openssh-server xinput usbutils pciutils iw accountsservice xserver-xorg-core xserver-xorg xserver-xorg-input-evdev xserver-xorg-video-nouveau linux-firmware libgl1-mesa-dri bluez driconf nano
+
+adduser switch
+
+addgroup switch sudo
+
+echo 'switch-ubuntu' > /etc/hostname
+
+cat <<EOF > /etc/hosts
+127.0.0.1   localhost
+127.0.0.1   switch-ubuntu   
+EOF
+
+mkdir /home/switch/.config && mkdir /home/switch/.config/autostart && touch /home/switch/.config/autostart/nx-screenfix.desktop && cat <<EOF > /home/switch/.config/autostart/nx-screenfix.desktop
+[Desktop Entry]
+Type=Application
+Name=Switch Screen Fix
+Exec=sh -c 'xrandr --output DSI-1 --mode 720x1280 --rate 60.00 --rotate left'
+EOF

@@ -1,0 +1,15 @@
+apt install xfce4-goodies xfce4-indicator-plugin lightdm lightdm-gtk-greeter
+
+nano /etc/light
+
+touch /etc/lightdm/lightdm.conf
+
+cat <<EOF > /etc/lightdm/lightdm.conf
+[SeatDefaults]
+autologin-user=switch
+autologin-user-timeout=0
+greeter-session=lightdm-gtk-greeter
+user-session=xfce
+EOF
+
+
